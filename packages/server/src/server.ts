@@ -102,7 +102,7 @@ app.getKoaApp().use(async (ctx, next) => {
   if (ctx.url === '/health/readiness') {
     try {
       const result = relay.eth().chainId();
-      if (result.indexOf('0x12') > 0) {
+      if (result.indexOf('0x12') > -1) {
         ctx.status = 200;
         ctx.body = 'OK';
       } else {
@@ -183,7 +183,7 @@ const logAndHandleResponse = async (methodName, methodFunction) => {
  *
  * returns: string
  */
- const generateRequestId = () :string => {
+const generateRequestId = (): string => {
   return crypto.randomUUID();
 };
 
@@ -319,7 +319,7 @@ app.useRpc('eth_call', async (params: any) => {
  */
 app.useRpc('eth_sendRawTransaction', async (params: any) => {
   return logAndHandleResponse("eth_sendRawTransaction", (requestId) =>
-  relay.eth().sendRawTransaction(params?.[0], requestId));
+    relay.eth().sendRawTransaction(params?.[0], requestId));
 });
 
 /**
