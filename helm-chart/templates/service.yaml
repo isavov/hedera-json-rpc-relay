@@ -13,6 +13,9 @@ metadata:
 {{ .Values.service.annontations_JSON | toJson | nindent 4 }}
 {{- end }}  
 spec:
+  {{- if .Values.service.loadBalancerIP}}
+  loadBalancerIP: {{ .Values.service.loadBalancerIP }} 
+  {{- end }}
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.ports.containerPort }}
