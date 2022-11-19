@@ -1,13 +1,12 @@
 name: Docker Image
 on:
-  - push
-  # pull_request:
-  #   types:
-  #     - closed
+  pull_request:
+    types:
+      - closed
 
 jobs:
   build:
-    # if: ${{ github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'CI:TriggerBuild')}}
+    if: ${{ github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'CI:TriggerBuild')}}
     runs-on: ubuntu-latest
 
     steps:
