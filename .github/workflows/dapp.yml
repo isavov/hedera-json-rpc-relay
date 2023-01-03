@@ -76,5 +76,22 @@ jobs:
       #     max_attempts: 10
       #     timeout_minutes: 10
       #     command: npm run test --prefix ./dapp-example/
+      - name: Add reporter
+        run: npm i mocha-junit-reporter --prefix ./dapp-example/
+
       - name: Run tests
         run: npm run test --prefix ./dapp-example/
+
+      - name: Upload Unit Test Results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: Unit Test Results
+          path: dapp-example/*.xml
+      - name: Publish Reports
+        uses: mikepenz/action-junit-report@v3
+        if: always() # always run even if the previous step fails
+        with:
+          report_paths: "**/*.xml"
+          detailed_summary: true
+          include_passed: true
