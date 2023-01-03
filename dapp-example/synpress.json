@@ -22,5 +22,6 @@
     "requestTimeout": 40000,
     "responseTimeout": 50000,
     "taskTimeout": 60000,
-    "supportFile": "tests/support/index.js"
+  "supportFile": "tests/support/index.js",
+  "reporter": "mocha-junit-reporter"
   }
