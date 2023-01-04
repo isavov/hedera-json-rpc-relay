@@ -86,6 +86,10 @@ jobs:
         if: always()
         run: docker ps -a
 
+      - name: Docker Logs
+        if: always()
+        run: docker ps -a -q | xargs -L 1 docker logs
+
       - name: Upload Unit Test Results
         if: always()
         uses: actions/upload-artifact@v3
