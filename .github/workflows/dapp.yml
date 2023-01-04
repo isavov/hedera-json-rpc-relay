@@ -95,7 +95,9 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Unit Test Results
-          path: dapp-example/*.xml
+          path: |
+            dapp-example/*.xml
+            dapp-example/screenshots/**/*
       - name: Publish Reports
         uses: mikepenz/action-junit-report@v3
         if: always() # always run even if the previous step fails
