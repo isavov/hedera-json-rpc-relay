@@ -46,7 +46,8 @@ services:
     ports:
       - '4040:4040'
     command:
-      [
+      [   'ngrok config upgrade',
+          '&&',
           'ngrok',
           'http',
           'display:8080',
