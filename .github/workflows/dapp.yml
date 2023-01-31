@@ -47,6 +47,8 @@ jobs:
 
       - name: Build, Bootstrap & Test the dapp in Docker
         run: docker-compose --profile ngrok up --exit-code-from synpress
+        env:
+           NGROK_AUTH: ${{ secrets.NGROK_AUTH }}
         working-directory: ./dapp-example/
         timeout-minutes: 35
         
