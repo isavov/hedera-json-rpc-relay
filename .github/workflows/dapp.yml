@@ -4,8 +4,6 @@ on:
   pull_request:
     branches: [main, release/**]
   push:
-    branches: [main, release/**]
-    tags: [v*]
 
 jobs:
   setup-local-hedera:
@@ -48,8 +46,12 @@ jobs:
         run: npm run check:node
 
       - name: Build, Bootstrap & Test the dapp in Docker
-        run: docker-compose up --exit-code-from synpress
+        run: docker-compose --profile video up --exit-code-from synpress
         working-directory: ./dapp-example/
+      - uses: actions/upload-artifact@v3
+        with:
+          name: videos
+          path: ./dapp-example/docker/        
 
       - name: Publish Reports
         uses: mikepenz/action-junit-report@v3
