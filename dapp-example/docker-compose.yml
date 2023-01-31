@@ -45,8 +45,9 @@ services:
     image: synthetixio/ngrok:457bb48776c3b14de232d9dda620ba9188dc40ac-base
     ports:
       - '4040:4040'
-    command:
-      [
+    command:      
+      [   'ngrok config upgrade',
+          '&&',
           'ngrok',
           'http',
           'display:8080',
