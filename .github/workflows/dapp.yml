@@ -46,15 +46,10 @@ jobs:
         run: npm run check:node
 
       - name: Build, Bootstrap & Test the dapp in Docker
-        run: docker-compose --profile video up --exit-code-from synpress
+        run: docker-compose --profile ngrok up --exit-code-from synpress
         working-directory: ./dapp-example/
         timeout-minutes: 35
-      - uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: videos
-          path: ./dapp-example/docker/        
-
+        
       - name: Publish Reports
         uses: mikepenz/action-junit-report@v3
         if: always()
