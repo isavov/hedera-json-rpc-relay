@@ -9,7 +9,7 @@ jobs:
   setup-local-hedera:
     name: Dapp Tests
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 40
     permissions:
       contents: write
     steps:
@@ -48,7 +48,9 @@ jobs:
       - name: Build, Bootstrap & Test the dapp in Docker
         run: docker-compose --profile video up --exit-code-from synpress
         working-directory: ./dapp-example/
+        timeout-minutes: 35
       - uses: actions/upload-artifact@v3
+        if: always()
         with:
           name: videos
           path: ./dapp-example/docker/        
