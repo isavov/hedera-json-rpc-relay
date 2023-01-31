@@ -46,7 +46,7 @@ services:
     ports:
       - '4040:4040'
     command:      
-      [   'ngrok',
+      [   
           'http',
           'display:8080',
           '--authtoken',
