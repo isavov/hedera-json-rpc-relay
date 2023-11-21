@@ -87,7 +87,7 @@ describe('RPC Server Acceptance Tests', function () {
     logger.info(`E2E_RELAY_HOST: ${process.env.E2E_RELAY_HOST}`);
 
     if (USE_LOCAL_NODE === 'true') {
-      runLocalHederaNetwork();
+      // runLocalHederaNetwork();
     }
 
     if (global.relayIsLocal) {
@@ -106,7 +106,7 @@ describe('RPC Server Acceptance Tests', function () {
     if (USE_LOCAL_NODE === 'true') {
       // stop local-node
       logger.info('Shutdown local node');
-      shell.exec('hedera stop');
+      //shell.exec('hedera stop');
     }
 
     //stop relay
@@ -138,23 +138,23 @@ describe('RPC Server Acceptance Tests', function () {
     }
   }
 
-  function runLocalHederaNetwork() {
-    // set env variables for docker images until local-node is updated
-    process.env['NETWORK_NODE_IMAGE_TAG'] = '0.45.0-alpha.0';
-    process.env['HAVEGED_IMAGE_TAG'] = '0.45.0-alpha.0';
-    process.env['MIRROR_IMAGE_TAG'] = '0.92.0';
+  // function runLocalHederaNetwork() {
+  //   // set env variables for docker images until local-node is updated
+  //   process.env['NETWORK_NODE_IMAGE_TAG'] = '0.45.0-alpha.0';
+  //   process.env['HAVEGED_IMAGE_TAG'] = '0.45.0-alpha.0';
+  //   process.env['MIRROR_IMAGE_TAG'] = '0.92.0';
 
-    console.log(
-      `Docker container versions, services: ${process.env['NETWORK_NODE_IMAGE_TAG']}, mirror: ${process.env['MIRROR_IMAGE_TAG']}`,
-    );
+  //   console.log(
+  //     `Docker container versions, services: ${process.env['NETWORK_NODE_IMAGE_TAG']}, mirror: ${process.env['MIRROR_IMAGE_TAG']}`,
+  //   );
 
-    console.log('Installing local node...');
-    shell.exec(`npm install @hashgraph/hedera-local -g`);
+  //   console.log('Installing local node...');
+  //   shell.exec(`npm install @hashgraph/hedera-local -g`);
 
-    console.log('Starting local node...');
-    shell.exec(`hedera start -d`);
-    console.log('Hedera Hashgraph local node env started');
-  }
+  //   console.log('Starting local node...');
+  //   shell.exec(`hedera start -d`);
+  //   console.log('Hedera Hashgraph local node env started');
+  // }
 
   function runLocalRelay() {
     // start local relay, stop relay instance in local
