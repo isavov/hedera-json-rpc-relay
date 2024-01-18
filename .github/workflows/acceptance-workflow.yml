@@ -23,7 +23,8 @@ on:
 
 jobs:
   acceptance-workflow:
-    runs-on: [self-hosted, Linux, large, ephemeral]
+    # runs-on: [self-hosted, Linux, large, ephemeral]
+    runs-on: ubuntu-latest
     timeout-minutes: 50
     permissions:
       contents: write
