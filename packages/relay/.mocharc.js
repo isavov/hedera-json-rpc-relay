@@ -4,10 +4,10 @@ module.exports = {
     color: true,
     'fail-zero': Boolean(process.env.CI),
     reporter: "mocha-multi-reporters",
-    'reporter-options': `configFile=${__filename}`,
+    'reporter-options': "configFile=.mocharc.js",
     'reporterEnabled': "spec, mocha-junit-reporter",
     "mochaJunitReporterReporterOptions": {
-        "mochaFile": `${__dirname}/test-results.[hash].xml`,
+        "mochaFile": "test-results.[hash].xml",
         "includePending": true,
         "outputs": true
     },
