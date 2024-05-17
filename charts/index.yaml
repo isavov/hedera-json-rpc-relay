@@ -1,6 +1,73 @@
 apiVersion: v1
 entries:
+  hedera-json-rpc:
+  - apiVersion: v2
+    appVersion: 0.26.0-SNAPSHOT
+    created: "2024-05-17T13:33:36.686261772Z"
+    dependencies:
+    - alias: relay
+      condition: relay.enabled
+      name: hedera-json-rpc-relay
+      repository: file://../hedera-json-rpc-relay
+      version: '>=0.24.0-0'
+    - alias: ws
+      condition: ws.enabled
+      name: hedera-json-rpc-relay-websocket
+      repository: file://../hedera-json-rpc-relay-websocket
+      version: '>=0.24.0-0'
+    description: Umbrella Helm chart deployment of the hashgraph/hedera-json-rpc products
+    digest: 7f770647b2be9f4678f2d501ebe5fd9e9d91ba427a0a44b15f09462ea52aef0d
+    home: https://github.com/hashgraph/hedera-json-rpc-relay
+    icon: https://camo.githubusercontent.com/cca6b767847bb8ca5c7059481ba13a5fc81c5938/68747470733a2f2f7777772e6865646572612e636f6d2f6c6f676f2d6361706974616c2d686261722d776f72646d61726b2e6a7067
+    keywords:
+    - blockchain
+    - dlt
+    - hedera
+    - hashgraph
+    - smart
+    - contracts
+    - evm
+    - json
+    - rpc
+    maintainers:
+    - email: engsmartcontracts@hedera.com
+      name: Hedera Smart Contracts Team
+    name: hedera-json-rpc
+    sources:
+    - https://github.com/hashgraph/hedera-json-rpc-relay
+    type: application
+    urls:
+    - https://isavov.github.io/hedera-json-rpc-relay/charts/hedera-json-rpc-0.26.0-SNAPSHOT.tgz
+    version: 0.26.0-SNAPSHOT
   hedera-json-rpc-relay:
+  - apiVersion: v2
+    appVersion: 0.48.0-SNAPSHOT
+    created: "2024-05-17T13:33:36.687138761Z"
+    description: Helm chart deployment of the hashgraph/hedera-json-rpc-relay
+    digest: afbdba249ec7493ce7f3be2611953a16c33d516a77f7017a1dd47eddf60f2b69
+    home: https://github.com/hashgraph/hedera-json-rpc-relay
+    icon: https://camo.githubusercontent.com/cca6b767847bb8ca5c7059481ba13a5fc81c5938/68747470733a2f2f7777772e6865646572612e636f6d2f6c6f676f2d6361706974616c2d686261722d776f72646d61726b2e6a7067
+    keywords:
+    - blockchain
+    - dlt
+    - hedera
+    - hashgraph
+    - smart
+    - contracts
+    - evm
+    - relay
+    - json
+    - rpc
+    maintainers:
+    - email: engsmartcontracts@hedera.com
+      name: Hedera Smart Contracts Team
+    name: hedera-json-rpc-relay
+    sources:
+    - https://github.com/hashgraph/hedera-json-rpc-relay
+    type: application
+    urls:
+    - https://isavov.github.io/hedera-json-rpc-relay/charts/hedera-json-rpc-relay-0.48.0-SNAPSHOT.tgz
+    version: 0.48.0-SNAPSHOT
   - apiVersion: v2
     appVersion: 0.26.0-SNAPSHOT
     created: "2023-06-29T16:46:38.749698-06:00"
@@ -96,6 +163,37 @@ entries:
     urls:
     - hedera-json-rpc-relay-0.17.1.tgz
     version: 0.17.1
+  hedera-json-rpc-relay-websocket:
+  - apiVersion: v2
+    appVersion: 0.48.0-SNAPSHOT
+    created: "2024-05-17T13:33:36.687980704Z"
+    description: Helm chart deployment of the hashgraph/hedera-json-rpc-relay web
+      socket server
+    digest: e0997073d103f1ac30a736265ac6a0e79d24f342b256950485b94a65ab4027e8
+    home: https://github.com/hashgraph/hedera-json-rpc-relay
+    icon: https://camo.githubusercontent.com/cca6b767847bb8ca5c7059481ba13a5fc81c5938/68747470733a2f2f7777772e6865646572612e636f6d2f6c6f676f2d6361706974616c2d686261722d776f72646d61726b2e6a7067
+    keywords:
+    - blockchain
+    - dlt
+    - hedera
+    - hashgraph
+    - smart
+    - contracts
+    - evm
+    - relay
+    - json
+    - rpc
+    - websocket
+    maintainers:
+    - email: engsmartcontracts@hedera.com
+      name: Hedera Smart Contracts Team
+    name: hedera-json-rpc-relay-websocket
+    sources:
+    - https://github.com/hashgraph/hedera-json-rpc-relay
+    type: application
+    urls:
+    - https://isavov.github.io/hedera-json-rpc-relay/charts/hedera-json-rpc-relay-websocket-0.48.0-SNAPSHOT.tgz
+    version: 0.48.0-SNAPSHOT
   json-rpc-relay-websocket:
   - apiVersion: v2
     appVersion: 0.26.0-SNAPSHOT
@@ -127,4 +225,4 @@ entries:
     urls:
     - json-rpc-relay-websocket-0.26.0-SNAPSHOT.tgz
     version: 0.26.0
-generated: "2023-06-29T16:46:38.745383-06:00"
+generated: "2024-05-17T13:33:36.683893788Z"
